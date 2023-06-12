@@ -187,3 +187,13 @@ $ docker images
 ```
 La commande **docker images** est utilisée pour afficher la liste des images Docker disponibles sur votre système. Elle permet d'afficher des informations telles que le nom de l'image, son ID, la taille, et la date de création.
 
+# 16.Ouvrir le port 5050 du service pgadmin
+
+Dans le menu de configuration, recherchez la section "Ports". Si vous ne voyez pas cette section, cliquez sur l'icône de "+" pour ajouter une nouvelle section.
+En suite cliquez sur l'adresse du port 5050 
+  
+  ![image](https://github.com/kplr-training/Docker/assets/123757632/7397057a-c371-4727-a5ea-1772c19094bf)
+
+ Utiliser l'email et mot de passe pour ce connecter a pgadmin : 
+    * email : admin@email.com
+    * mot de passe : admin 
