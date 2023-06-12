@@ -63,6 +63,15 @@ Dans cet exemple, il y a deux images Docker répertoriées. L'image "nginx" avec
 La commande `docker images` vous permet de visualiser les images Docker disponibles sur votre système, ce qui peut être utile pour gérer et vérifier les images que vous utilisez pour vos conteneurs.
 
 ## 4. Télécharger l'image "hello-world" depuis le Docker Hub.
+
+```
+docker pull hello-world
+```
+
+La commande docker pull hello-world est utilisée pour télécharger l'image Docker "hello-world" à partir du registre Docker Hub sur votre système local. L'image "hello-world" est un exemple minimaliste utilisé couramment pour vérifier que l'installation de Docker fonctionne correctement.
+
+Lorsque vous exécutez la commande docker pull hello-world, Docker va chercher l'image "hello-world" sur Docker Hub (si elle n'est pas déjà présente sur votre système) et la télécharge localement.
+
 ## 5. Vérifiez à nouveau les images Docker disponibles.
 ## 6. Supprimer l'image "hello-world" de votre machine. 
 ## 7. Vérifiez une dernière fois la liste des images Docker. 
