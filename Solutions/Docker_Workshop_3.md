@@ -209,10 +209,15 @@ $ docker ps
   
 La commande **docker ps** est utilisée pour afficher les conteneurs Docker en cours d'exécution sur votre système. Elle permet d'afficher des informations telles que le nom ou l'ID du conteneur, l'image utilisée, le statut, les ports exposés, etc.
   
+![image](https://github.com/kplr-training/Docker/assets/123757632/161351e3-579b-41d5-8997-a3dff8822d6b)
+  
 # 15.Afficher la liste des images 
   
 ```
 $ docker images
 ```
+  
 La commande **docker images** est utilisée pour afficher la liste des images Docker disponibles sur votre système. Elle permet d'afficher des informations telles que le nom de l'image, son ID, la taille, et la date de création.
+
+![image](https://github.com/kplr-training/Docker/assets/123757632/61a0b421-6aed-4ef0-9274-cb318590044a)
 
