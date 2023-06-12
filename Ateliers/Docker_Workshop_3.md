@@ -6,7 +6,7 @@ Nous allons créer un fichier docker-compose.yml dans lequel nous définirons le
 
 ## 1. Création du fichier docker_compose.yaml
 ```
-version: ""
+version: " "
 
 services : 
   service1:
@@ -19,7 +19,9 @@ services :
 
 ## 2. Ajouter la version 3.9 
 
-Dans un fichier Docker Compose, la ligne "version: <version>" spécifie la version de la syntaxe utilisée dans le fichier. Cette version détermine les fonctionnalités et les options disponibles dans le fichier Docker Compose. Elle permet également de garantir la compatibilité avec une version spécifique de Docker Compose.
+Dans un fichier Docker Compose, la ligne "version: <version>" spécifie la version de la syntaxe utilisée dans le fichier. 
+
+Cette version détermine les fonctionnalités et les options disponibles dans le fichier Docker Compose. Elle permet également de garantir la compatibilité avec une version spécifique de Docker Compose.
   
 ## 3. Ajouter le service postgres
   
