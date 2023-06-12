@@ -157,4 +157,33 @@ Voici ce que cela signifie :
   
 En utilisant cette configuration, Docker va créer un volume nommé "data" qui peut être utilisé par les services définis dans votre fichier Docker Compose.
   
+## 13.Executer les services définis dans le fichier Docker Compose 
+  
+```
+$ docker compose up -d
+```
+La commande exécute les services définis dans votre fichier Docker Compose et les exécute en mode détaché (en arrière-plan).
+
+Voici ce que fait chaque partie de la commande :
+
+- `docker-compose`: C'est l'utilitaire en ligne de commande Docker Compose qui est utilisé pour gérer les applications multi-conteneurs.
+- `up`: Cette option indique à Docker Compose de démarrer les services spécifiés dans votre fichier Docker Compose.
+- `-d`: C'est l'option pour exécuter les services en mode détaché. Cela signifie que les conteneurs seront exécutés en arrière-plan et le contrôle sera rendu à votre terminal, vous permettant de continuer à utiliser votre ligne de commande.
+
+En utilisant `docker-compose up -d`, vous pouvez démarrer votre application Docker Compose sans bloquer votre terminal, ce qui vous permet de continuer à travailler sans interrompre l'exécution des services de votre application.
+
+## 14.Afficher les conteneurs docker en cours
+
+```
+$ docker ps
+```
+  
+La commande **docker ps** est utilisée pour afficher les conteneurs Docker en cours d'exécution sur votre système. Elle permet d'afficher des informations telles que le nom ou l'ID du conteneur, l'image utilisée, le statut, les ports exposés, etc.
+  
+# 15.Afficher la liste des images 
+  
+```
+$ docker images
+```
+La commande **docker images** est utilisée pour afficher la liste des images Docker disponibles sur votre système. Elle permet d'afficher des informations telles que le nom de l'image, son ID, la taille, et la date de création.
 
