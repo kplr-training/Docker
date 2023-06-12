@@ -194,6 +194,8 @@ En suite cliquez sur l'adresse du port 5050
   
   ![image](https://github.com/kplr-training/Docker/assets/123757632/7397057a-c371-4727-a5ea-1772c19094bf)
 
- Utiliser l'email et mot de passe pour ce connecter a pgadmin : 
+ Utiliser l'email et mot de passe pour ce connecter a pgadmin :
+  
     * email : admin@email.com
+  
     * mot de passe : admin 
