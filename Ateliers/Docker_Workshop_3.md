@@ -25,7 +25,13 @@ Cette version détermine les fonctionnalités et les options disponibles dans le
   
 ## 3. Ajouter le service postgres
   
-## 3. Specifier le nom du conteneur "container_name:.."
+Ajoutez un nouveau bloc de configuration pour le nouveau service en utilisant la syntaxe YAML. Par exemple :
+  
+  ```
+  services :
+    nouveau_service:
+  ```
+  
 ## 4. Indiquer l'image docker avec le tag ":latest" a partir du [Docker-Hub](https://hub.docker.com/_/postgres).
 ## 5. Définir les variables d'environement pour le conteneur PostgreSQL 
 ```
