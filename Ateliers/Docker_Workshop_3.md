@@ -32,7 +32,12 @@ Ajoutez un nouveau bloc de configuration pour le nouveau service en utilisant la
     nouveau_service:
   ```
   
-## 4. Indiquer l'image docker avec le tag ":latest" a partir du [Docker-Hub](https://hub.docker.com/_/postgres).
+## 4. Indiquer l'image docker avec la version ":13" a partir du [Docker-Hub](https://hub.docker.com/_/postgres).
+  ```
+  postgres:
+    image: <nom_de_l'image>
+  ```
+      
 ## 5. Définir les variables d'environement pour le conteneur PostgreSQL 
 ```
 - POSTGRES_USER=${POSTGRES_USER}
