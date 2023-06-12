@@ -1,4 +1,4 @@
-# Dockeriser un modèle machine learning : DockerFile
+# Introduction à DockerFile : Dockeriser un modèle machine learning
 
 Dans cet atelier, nous allons vous montrer comment utiliser Docker pour containeriser une application Flask, ce qui vous permettra de la déployer facilement et rapidement sur différentes plateformes, sans vous soucier des dépendances ou des configurations du système.
 
