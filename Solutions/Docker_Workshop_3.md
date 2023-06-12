@@ -221,3 +221,15 @@ La commande **docker images** est utilisée pour afficher la liste des images Do
 
 ![image](https://github.com/kplr-training/Docker/assets/123757632/61a0b421-6aed-4ef0-9274-cb318590044a)
 
+# 16.Ouvrir le port 5050 du service pgadmin
+
+Dans le menu de configuration, recherchez la section "Ports". Si vous ne voyez pas cette section, cliquez sur l'icône de "+" pour ajouter une nouvelle section.
+En suite cliquez sur l'adresse du port 5050 
+  
+![image](https://github.com/kplr-training/Docker/assets/123757632/84465cfe-ac93-4f1d-a124-59c5d1e32cf8)
+
+ Utiliser l'email et mot de passe pour ce connecter a pgadmin : 
+    * email : admin@email.com
+    * mot de passe : admin 
+  
+![image](https://github.com/kplr-training/Docker/assets/123757632/66d6a55a-df79-4797-af74-4c2d21c70f9f)
