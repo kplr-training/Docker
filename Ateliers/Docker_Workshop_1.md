@@ -9,6 +9,7 @@ En suivant les étapes fournies, vous apprendrez comment télécharger l'image D
 ```
 $ docker pull postgres 
 ```
+
 La commande `docker pull postgres` est utilisée pour télécharger l'image Docker de PostgreSQL à partir du référentiel Docker Hub. Voici un exemple de résultat d'exécution :
 
 ```
@@ -40,7 +41,7 @@ Cet exemple montre la sortie typique lors du téléchargement de l'image Postgre
 ## 2. Vérifier les images Docker installées
 
 ```
-docker images 
+$ docker images 
 ```
 
 La commande `docker images` permet de lister les images Docker disponibles sur votre machine. Vous pouvez l'utiliser pour vérifier si l'image PostgreSQL a été téléchargée avec succès. Voici un exemple de résultat qui inclut l'image PostgreSQL :
@@ -69,7 +70,7 @@ Si vous voyez une entrée similaire dans le résultat de la commande `docker ima
 La commande suivante permet de créer et d'exécuter un conteneur Docker basé sur l'image PostgreSQL :
 
 ```
-docker run --name postgres_cont -e POSTGRES_PASSWORD=password -d -p 5432:5432 postgres
+$ docker run --name postgres_cont -e POSTGRES_PASSWORD=password -d -p 5432:5432 postgres
 ```
 
 Explications :
@@ -95,6 +96,10 @@ Une fois que le conteneur est en cours d'exécution, vous pouvez utiliser des co
 ![image](https://github.com/kplr-training/Docker/assets/123757632/3f07af3b-2437-46ab-9b65-b1a22ac33900)
 
 ## 4. Afficher les conteneurs en cours 
+
+```
+$ docker pull ps
+```
 
 La commande `docker ps` permet d'afficher la liste des conteneurs en cours d'exécution sur votre machine. Utilisez-la pour afficher le conteneur PostgreSQL que vous avez créé. Voici un exemple de résultat :
 
@@ -210,6 +215,10 @@ En exécutant cette commande, vous quitterez le shell Bash du conteneur et revie
 
 ## 10. Afficher les conteneurs en cours 
 
+```
+$ docker pull ps
+```
+
 Après avoir quitté le shell Bash à l'intérieur du conteneur à l'aide de la commande `exit`, vous pouvez utiliser la commande `docker ps` pour afficher la liste des conteneurs en cours d'exécution sur votre machine. Voici un exemple de résultat :
 
 ```
@@ -224,18 +233,104 @@ Si vous voyez une entrée similaire dans le résultat de la commande `docker ps`
 ![image](https://github.com/kplr-training/Docker/assets/123757632/55478f88-d062-4860-b3bf-9cfa546ff633)
 
 ## 11. Arreter le conteneur de l'image postgres
+
 Pour arrêter un conteneur Docker, vous pouvez utiliser la commande `docker stop` suivie de l'identifiant du conteneur. Voici la commande pour arrêter le conteneur PostgreSQL :
 
 ```
-docker stop 088de32b0e5c
+docker stop <ID_conteneur>
 ```
 
-Après avoir exécuté cette commande, le conteneur PostgreSQL correspondant à l'identifiant `088de32b0e5c` sera arrêté. Vous n'aurez pas de résultat de retour dans votre terminal, mais vous pouvez utiliser la commande `docker ps` pour vérifier si le conteneur est bien arrêté.
+Après avoir exécuté cette commande, le conteneur PostgreSQL correspondant à l'identifiant `<ID_conteneur>` sera arrêté.
 
-Si vous exécutez `docker ps` après avoir arrêté le conteneur, vous ne verrez pas l'entrée correspondant à ce conteneur dans la liste, ce qui indique que le conteneur a été arrêté avec succès.
+![image](https://github.com/kplr-training/Docker/assets/123757632/1b3359b5-75b7-43ec-9a20-40283bb1f634)
 
-13. Supprimer l'image postgres
-14. Supprimer le conteneur
-15. Afficher les conteneurs
-16. Supprimer l'image postgres 
-17. Afficher les images 
+## 12. Supprimer l'image postgres
+
+```
+$ docker rmi postgres
+```
+
+Si vous essayez de supprimer une image Docker de Postgres avant de supprimer le conteneur associé, l'erreur qui peut s'afficher dépendra de la situation spécifique. Voici l'erreur courante à laquelle vous pourriez être confronté :
+
+* Si le conteneur est en cours d'exécution ou s'il est utilisé par d'autres conteneurs ou processus, vous pourriez voir l'erreur suivante :
+* 
+   ```
+   Error response from daemon: conflict: unable to remove repository reference "postgres:tag" (must force) - container [container_ID] is using its referenced image [image_ID]
+   ```
+   
+   Cette erreur vous indique que le conteneur utilise l'image que vous essayez de supprimer. Dans ce cas, vous devez d'abord arrêter et supprimer le conteneur, puis supprimer l'image.
+   
+![image](https://github.com/kplr-training/Docker/assets/123757632/a9d0305b-a502-4805-904e-064d6491717f)
+
+## 13. Supprimer le conteneur
+
+```
+$ docker rm <ID_conteneur>
+```
+
+Lorsque vous exécutez la commande `docker rm container_ID` pour supprimer un conteneur Docker spécifique, le résultat affiché dépendra du succès ou de l'échec de l'opération  :
+
+Si la suppression du conteneur est réussie, vous verrez simplement l'ID du conteneur supprimé :
+
+   ```
+   container_ID
+   ```
+   Cela confirme que le conteneur a été supprimé avec succès.
+   
+Assurez-vous de remplacer "container_ID" par l'ID réel du conteneur que vous souhaitez supprimer lors de l'exécution de la commande.
+
+![image](https://github.com/kplr-training/Docker/assets/123757632/262a9291-ef75-4e1f-be55-e712539e8328)
+
+## 14. Afficher les conteneurs
+
+```
+$ docker ps -a
+```
+
+Si vous souhaitez afficher la liste des conteneurs Docker présents sur votre système et vérifier qu'aucun conteneur n'est en cours d'exécution, vous pouvez utiliser la commande `docker ps -a`. Voici le résultat que vous pourriez obtenir lorsque vous n'avez aucun conteneur en cours d'exécution :
+
+```
+CONTAINER ID   IMAGE    COMMAND   CREATED   STATUS    PORTS   NAMES
+```
+
+Dans ce cas, aucun conteneur n'est répertorié. Les en-têtes de colonne sont affichés (CONTAINER ID, IMAGE, COMMAND, CREATED, STATUS, PORTS, NAMES), mais il n'y a pas d'entrées de conteneur spécifiques. Cela indique qu'il n'y a aucun conteneur actuellement en cours d'exécution sur votre système.
+
+Notez que la colonne "STATUS" sera vide pour tous les conteneurs, puisqu'aucun n'est en cours d'exécution.
+
+![image](https://github.com/kplr-training/Docker/assets/123757632/6a604bd0-7965-46ac-aae7-3fa273a18945)
+
+## 15. Supprimer l'image postgres 
+
+```
+$ docker rmi postgres
+```
+
+Pour supprimer une image Docker de Postgres, vous pouvez utiliser la commande `docker rmi image_nom`, où "image_ID" correspond à l'ID ou au nom de l'image que vous souhaitez supprimer. Voici le résultat que vous pourriez obtenir lors de la suppression de l'image Postgres :
+
+```
+Untagged: postgres:tag
+Untagged: postgres@sha256:xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+Deleted: sha256:xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+```
+
+Dans ce cas, les messages indiquent que l'image a été supprimée avec succès. L'image "postgres:tag" a été désétiquetée (untagged), ce qui signifie qu'elle n'est plus associée à une étiquette spécifique. Ensuite, l'image a été supprimée du système, et l'ID correspondant à l'image supprimée est affiché.
+
+![image](https://github.com/kplr-training/Docker/assets/123757632/e9777e79-bed6-4f22-927f-bdc92f47f25a)
+
+## 16. Afficher les images 
+
+```
+$ docker images 
+```
+
+Pour  afficher la liste des images Docker présentes sur votre système après avoir supprimé l'image Postgres, vous pouvez utiliser la commande `docker images`. Voici le résultat que vous obtiendrez lorsque vous n'avez aucune image :
+
+```
+REPOSITORY   TAG    IMAGE ID   CREATED   SIZE
+```
+
+Dans ce cas, aucun référentiel d'image n'est répertorié. Les en-têtes de colonne sont affichés (REPOSITORY, TAG, IMAGE ID, CREATED, SIZE), mais il n'y a pas d'entrées d'image spécifiques. Cela indique qu'il n'y a aucune image Docker présente sur votre système après avoir supprimé l'image Postgres.
+
+Notez que les colonnes "REPOSITORY", "TAG", "IMAGE ID", "CREATED" et "SIZE" seront vides pour toutes les images, puisqu'aucune n'est présente.
+
+![image](https://github.com/kplr-training/Docker/assets/123757632/d5199156-d9b6-4bfd-88b0-0ec08ad382e7)
