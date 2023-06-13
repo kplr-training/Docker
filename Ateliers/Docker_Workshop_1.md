@@ -36,8 +36,6 @@ Explications :
 
 Cet exemple montre la sortie typique lors du téléchargement de l'image PostgreSQL. La taille et le temps de téléchargement peuvent varier en fonction de la vitesse de votre connexion Internet.
 
-![image](https://github.com/kplr-training/Docker/assets/123757632/86992449-9d6b-4963-9ec7-f17a7862d7e1)
-
 ## 2. Vérifier les images Docker installées
 
 ```
@@ -60,8 +58,6 @@ Explications :
 - `SIZE` : Représente la taille de l'image.
 
 Dans cet exemple, vous pouvez voir une entrée pour l'image `postgres` avec la balise `latest`. L'identifiant de l'image est `3f80e1f80925`, et elle a été créée il y a environ 2 semaines. La taille de l'image est de 314 Mo.
-
-![image](https://github.com/kplr-training/Docker/assets/123757632/222cbb57-5665-4070-98a4-9a15c22c2260)
 
 Si vous voyez une entrée similaire dans le résultat de la commande `docker images`, cela signifie que l'image PostgreSQL a été téléchargée avec succès sur votre machine.
 
@@ -93,8 +89,6 @@ Ce résultat est l'identifiant unique du conteneur qui a été créé. Il peut v
 
 Une fois que le conteneur est en cours d'exécution, vous pouvez utiliser des commandes Docker supplémentaires pour interagir avec le conteneur PostgreSQL, comme exécuter des requêtes SQL à l'intérieur du conteneur ou accéder à ses journaux.
 
-![image](https://github.com/kplr-training/Docker/assets/123757632/3f07af3b-2437-46ab-9b65-b1a22ac33900)
-
 ## 4. Afficher les conteneurs en cours 
 
 ```
@@ -121,8 +115,6 @@ Explications :
 Dans cet exemple, vous pouvez voir l'entrée pour le conteneur `postgres_cont`, qui est basé sur l'image PostgreSQL. Le conteneur est en cours d'exécution depuis environ 5 minutes et le port 5432 du conteneur est mappé sur le port 5432 de l'hôte.
 
 Si vous voyez une entrée similaire dans le résultat de la commande `docker ps`, cela signifie que le conteneur PostgreSQL que vous avez créé est en cours d'exécution.
-
-![image](https://github.com/kplr-training/Docker/assets/123757632/2600c313-c2be-4987-a6fd-312f95686373)
 
 ## 5. Exécuter une session interactive de shell 
 
@@ -151,8 +143,6 @@ root@088de32b0e5c:/#
 
 Le résultat affiche le prompt du terminal à l'intérieur du conteneur, qui indique que vous êtes dans le répertoire racine (`/`) du conteneur et que vous exécutez des commandes en tant qu'utilisateur `root`.
 
-![image](https://github.com/kplr-training/Docker/assets/123757632/5621505f-cf9e-4774-be0e-f85b727b4ec6)
-
 ## 6. Connecter a postgres 
 
 À partir de là, vous pouvez exécuter des commandes spécifiques à l'intérieur du conteneur, telles que des commandes PostgreSQL pour interagir avec la base de données. Par exemple, vous pouvez exécuter `psql` pour ouvrir un shell de ligne de commande PostgreSQL :
@@ -162,8 +152,6 @@ root@088de32b0e5c:/# psql -U postgres
 ```
 
 Cela vous permettra de vous connecter à la base de données PostgreSQL et d'exécuter des requêtes SQL ou des commandes spécifiques à PostgreSQL.
-
-![image](https://github.com/kplr-training/Docker/assets/123757632/9db2a93e-9b64-484e-88d3-b4383375563b)
 
 ## 7. Exécuter des commandes PostgreSQL 
 
@@ -187,8 +175,6 @@ postgres=# \l
 
 Ce résultat affiche une liste des bases de données disponibles dans votre instance PostgreSQL, y compris leurs noms, propriétaires, encodage, collationnement, ctype et accès restreint.
 
-![image](https://github.com/kplr-training/Docker/assets/123757632/1ac4f5c4-7fcf-43bf-b971-5f9ec0ba4322)
-
 ## 8. Quitter Postgres 
 
 Pour quitter le shell de ligne de commande PostgreSQL (`psql`) à l'intérieur du conteneur, vous pouvez simplement exécuter la commande `exit`. Voici un exemple de résultat :
@@ -199,8 +185,6 @@ postgres=# exit
 
 En exécutant cette commande, vous serez déconnecté du shell PostgreSQL et retournerez au shell de votre hôte.
 
-![image](https://github.com/kplr-training/Docker/assets/123757632/a9babf07-69c2-4178-be41-9869a2026953)
-
 ## 9. Quitter le conteneur
 
 Pour quitter le shell Bash à l'intérieur du conteneur, vous pouvez exécuter la commande `exit`. Voici un exemple de résultat :
@@ -210,8 +194,6 @@ root@088de32b0e5c:/# exit
 ```
 
 En exécutant cette commande, vous quitterez le shell Bash du conteneur et reviendrez au shell de votre hôte. Le prompt de votre hôte sera affiché après avoir exécuté la commande `exit`.
-
-![image](https://github.com/kplr-training/Docker/assets/123757632/d388c9e1-f802-454c-84b4-6d205c5c7995)
 
 ## 10. Afficher les conteneurs en cours 
 
@@ -230,8 +212,6 @@ Dans cet exemple, vous pouvez voir une entrée pour le conteneur `postgres_cont`
 
 Si vous voyez une entrée similaire dans le résultat de la commande `docker ps`, cela signifie que le conteneur PostgreSQL que vous avez créé est toujours en cours d'exécution même après avoir quitté le shell Bash à l'intérieur du conteneur.
 
-![image](https://github.com/kplr-training/Docker/assets/123757632/55478f88-d062-4860-b3bf-9cfa546ff633)
-
 ## 11. Arreter le conteneur de l'image postgres
 
 Pour arrêter un conteneur Docker, vous pouvez utiliser la commande `docker stop` suivie de l'identifiant du conteneur. Voici la commande pour arrêter le conteneur PostgreSQL :
@@ -241,8 +221,6 @@ docker stop <ID_conteneur>
 ```
 
 Après avoir exécuté cette commande, le conteneur PostgreSQL correspondant à l'identifiant `<ID_conteneur>` sera arrêté.
-
-![image](https://github.com/kplr-training/Docker/assets/123757632/1b3359b5-75b7-43ec-9a20-40283bb1f634)
 
 ## 12. Supprimer l'image postgres
 
@@ -259,8 +237,6 @@ Si vous essayez de supprimer une image Docker de Postgres avant de supprimer le 
    ```
    
    Cette erreur vous indique que le conteneur utilise l'image que vous essayez de supprimer. Dans ce cas, vous devez d'abord arrêter et supprimer le conteneur, puis supprimer l'image.
-   
-![image](https://github.com/kplr-training/Docker/assets/123757632/a9d0305b-a502-4805-904e-064d6491717f)
 
 ## 13. Supprimer le conteneur
 
@@ -279,8 +255,6 @@ Si la suppression du conteneur est réussie, vous verrez simplement l'ID du cont
    
 Assurez-vous de remplacer "container_ID" par l'ID réel du conteneur que vous souhaitez supprimer lors de l'exécution de la commande.
 
-![image](https://github.com/kplr-training/Docker/assets/123757632/262a9291-ef75-4e1f-be55-e712539e8328)
-
 ## 14. Afficher les conteneurs
 
 ```
@@ -296,8 +270,6 @@ CONTAINER ID   IMAGE    COMMAND   CREATED   STATUS    PORTS   NAMES
 Dans ce cas, aucun conteneur n'est répertorié. Les en-têtes de colonne sont affichés (CONTAINER ID, IMAGE, COMMAND, CREATED, STATUS, PORTS, NAMES), mais il n'y a pas d'entrées de conteneur spécifiques. Cela indique qu'il n'y a aucun conteneur actuellement en cours d'exécution sur votre système.
 
 Notez que la colonne "STATUS" sera vide pour tous les conteneurs, puisqu'aucun n'est en cours d'exécution.
-
-![image](https://github.com/kplr-training/Docker/assets/123757632/6a604bd0-7965-46ac-aae7-3fa273a18945)
 
 ## 15. Supprimer l'image postgres 
 
@@ -315,8 +287,6 @@ Deleted: sha256:xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
 
 Dans ce cas, les messages indiquent que l'image a été supprimée avec succès. L'image "postgres:tag" a été désétiquetée (untagged), ce qui signifie qu'elle n'est plus associée à une étiquette spécifique. Ensuite, l'image a été supprimée du système, et l'ID correspondant à l'image supprimée est affiché.
 
-![image](https://github.com/kplr-training/Docker/assets/123757632/e9777e79-bed6-4f22-927f-bdc92f47f25a)
-
 ## 16. Afficher les images 
 
 ```
@@ -332,5 +302,3 @@ REPOSITORY   TAG    IMAGE ID   CREATED   SIZE
 Dans ce cas, aucun référentiel d'image n'est répertorié. Les en-têtes de colonne sont affichés (REPOSITORY, TAG, IMAGE ID, CREATED, SIZE), mais il n'y a pas d'entrées d'image spécifiques. Cela indique qu'il n'y a aucune image Docker présente sur votre système après avoir supprimé l'image Postgres.
 
 Notez que les colonnes "REPOSITORY", "TAG", "IMAGE ID", "CREATED" et "SIZE" seront vides pour toutes les images, puisqu'aucune n'est présente.
-
-![image](https://github.com/kplr-training/Docker/assets/123757632/d5199156-d9b6-4bfd-88b0-0ec08ad382e7)
