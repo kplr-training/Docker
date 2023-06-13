@@ -162,47 +162,20 @@ Cette commande exécute le conteneur et son application intégrée, chacun sur l
 
 Cliquer sur l'adresse **http://127.0.0.1:5000** pour accéder a l'application 
 
-## 10 . Créer un répository sur [Dockerhub](https://hub.docker.com/)
-
-Pour créer un dépôt (repository) sur Docker Hub, vous pouvez suivre les étapes suivantes :
-
-Assurez-vous d'avoir un compte Docker Hub. Si vous n'en avez pas, rendez-vous sur https://hub.docker.com/ et créez un compte.
-
-Connectez-vous à [Docker hub](https://hub.docker.com/) en utilisant vos identifiants.
-
-Une fois connecté, cliquez sur le bouton "Create Repository" (Créer un dépôt) dans le coin supérieur droit de la page.
-
-![image](https://github.com/kplr-training/Docker/assets/123757632/806535e0-3f76-4483-8b40-f06f2d6984b9)
-
-Sur la page de création du dépôt, vous devez fournir les informations suivantes :
-
-Nom du dépôt : Choisissez un nom unique pour votre dépôt Docker. Il doit être en minuscules, sans espaces ni caractères spéciaux, sauf le tiret bas (_).
-Description (facultatif) : Vous pouvez ajouter une description pour décrire votre dépôt.
-
-Visibilité : Sélectionnez si vous voulez que votre dépôt soit public (visible par tous) ou privé (visible uniquement par vous et les personnes que vous invitez).
-
-Une fois que vous avez rempli les informations, cliquez sur le bouton "Create" (Créer) pour créer votre dépôt.
-
-![image](https://github.com/kplr-training/Docker/assets/123757632/eb3ba943-8636-42d4-bc74-7f227604ded0)
-
-Après la création du dépôt, vous pouvez le voir répertorié sur votre page Docker Hub.
-
-![image](https://github.com/kplr-training/Docker/assets/123757632/bf096d34-50f5-45ac-b31d-639fe1e57d6a)
-
-## 11 . Tagger l'image
+## 10 . Tagger l'image
 
 Taguer l'image avec la commande "docker tag". Cette commande permet de donner un nom à l'image, ainsi que le nom du compte Docker Hub et le nom du référentiel Docker Hub vers lequel vous voulez pousser l'image.
 
 ```
-$ docker tag flask-docker:latest mon_nom_utilisateur/docker-repo
+$ docker tag flask-docker:latest mon_nom_utilisateur/flask-docker:latest
 ```
 La commande docker tag flask-docker:latest mon_nom_utilisateur/docker-repo:tag renomme l'image locale "flask-docker" avec la balise "latest" en "mon_nom_utilisateur/docker-repo". 
 
-Cela signifie que vous avez créé une nouvelle balise pour l'image "flask-docker:latest" et l'avez renommée en "kplrtraining/docker_workshop3:latest".
+Cela signifie que vous avez créé une nouvelle balise pour l'image "flask-docker:latest" et l'avez renommée en "kplrtraining/flask-docker:latest".
 
-Cette commande est utile si vous souhaitez associer votre image locale à un dépôt Docker Hub spécifique, dans ce cas "kplrtraining/docker_workshop3". Vous pouvez ensuite pousser (push) cette image renommée vers Docker Hub pour la rendre disponible pour d'autres utilisateurs.
+Cette commande est utile si vous souhaitez associer votre image locale à un dépôt Docker Hub spécifique, dans ce cas "kplrtraining/flask-docker:latest". Vous pouvez ensuite pousser (push) cette image renommée vers Docker Hub pour la rendre disponible pour d'autres utilisateurs.
 
-## 12 . Afficher les images 
+## 11 . Afficher les images 
 
 ```
 $ docker images
@@ -214,25 +187,53 @@ Voici un exemple de sortie de la commande `docker images` après avoir tagué l'
 ```
 REPOSITORY                          TAG       IMAGE ID       CREATED         SIZE
 flask-docker                        latest    abcdef123456   2023-06-13     200MB
-mon_nom_utilisateur/docker-repo     latest    abcdef123456   2023-06-13     200MB
+mon_nom_utilisateur/flask-docker    latest    abcdef123456   2023-06-13     200MB
 ```
 
+![image](https://github.com/kplr-training/Docker/assets/123757632/1fd48cd6-10dc-4e99-a8d2-0ae253116644)
 
+Dans cet exemple, vous pouvez voir deux images : "flask-docker" avec la balise "latest" et "mon_nom_utilisateur/flask-docker " avec la balise "latest". Les deux images partagent le même IMAGE ID, car il s'agit de la même image avec deux balises différentes.
 
-Dans cet exemple, vous pouvez voir deux images : "flask-docker" avec la balise "latest" et "mon_nom_utilisateur/docker-repo" avec la balise "latest". Les deux images partagent le même IMAGE ID, car il s'agit de la même image avec deux balises différentes.
+## 12 . Se connecter à Docker Hub
 
+La commande `docker login` est utilisée pour se connecter à Docker Hub ou à un autre registre Docker. Voici les étapes pour effectuer une connexion à Docker Hub :
 
-## 11. Pousser l'image Docker vers Docker Hub 
+Exécutez la commande suivante :
+
+```
+$ docker login
+```
+Vous serez invité à saisir votre nom d'utilisateur Docker Hub. Entrez votre nom d'utilisateur et appuyez sur Entrée.
+
+Ensuite, vous serez invité à saisir votre mot de passe Docker Hub. Saisissez votre mot de passe (notez que lors de la saisie du mot de passe, rien ne s'affiche à l'écran pour des raisons de sécurité) et appuyez sur Entrée.
+
+Si les informations d'identification sont correctes, vous verrez un message indiquant que vous êtes maintenant connecté à Docker Hub.
+
+Une fois que vous êtes connecté, vous pouvez effectuer des opérations telles que le push et le pull d'images vers et depuis Docker Hub.
+
+![image](https://github.com/kplr-training/Docker/assets/123757632/a745b795-3d6f-4967-a9e2-e4c2b10cad7d)
+
+## 13 . Pousser l'image Docker vers Docker Hub 
 
 Maintenant, vous pouvez pousser (push) l'image "kplrtraining/docker_workshop3:latest" vers Docker Hub en utilisant la commande `docker push` :
 
 ```
-docker push kplrtraining/docker_workshop3:latest
+$ docker push mon_nom_utilisateur/flask-docker:latest
 ```
 
 Cela rendra votre image disponible sur Docker Hub sous le nom "kplrtraining/docker_workshop3" pour être utilisée par d'autres utilisateurs.
 Pousser l'image taguée vers Docker Hub avec la commande "docker push".
 
-```
-$ docker push mon_nom_utilisateur/docker-repo:tag
-```
+![image](https://github.com/kplr-training/Docker/assets/123757632/f959c9fd-484c-47d5-8d6e-78c52f4a9f8b)
+
+## 14 . Vérifier la présence de l'image sur [Docker Hub](https://hub.docker.com/)
+
+Après avoir poussé (push) l' image Docker sur Docker Hub, vous pouvez vérifier sa présence en suivant ces étapes :
+
+1. Ouvrez votre navigateur Web et accédez à [Docker Hub](https://hub.docker.com/)
+
+2. Connectez-vous à Docker Hub avec vos identifiants.
+
+3. Si l'image que vous avez poussée est présente sur Docker Hub, vous verrez son nom et sa description correspondants. Vous pouvez cliquer sur l'image pour accéder à sa page de détails.
+
+![image](https://github.com/kplr-training/Docker/assets/123757632/3a30b798-bb76-4ebe-9476-0d2e97d0cbb6)
