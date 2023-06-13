@@ -42,6 +42,7 @@ a2c984e9e4bb   mysql:latest       "docker-entrypoint.s…"   5 minutes ago   Up 
 ```
 
 Dans cet exemple, il y a deux conteneurs en cours d'exécution : "web" et "db". Le conteneur "web" est basé sur l'image nginx:latest et expose le port 80 sur l'hôte, tandis que le conteneur "db" est basé sur l'image mysql:latest et expose le port 3306 sur l'hôte.
+
 ## 3. Afficher la liste des images Docker disponibles sur votre machine. 
 
 ```
@@ -89,6 +90,7 @@ hello-world         latest    abcdef123456   1 minute ago    4.85kB
 Dans cet exemple, l'image "hello-world" est répertoriée avec le tag "latest". L'ID de l'image est "abcdef123456" et la taille est de 4.85kB. Cela indique que l'image "hello-world" a été téléchargée avec succès et est maintenant disponible sur votre système.
 
 Vous pouvez utiliser cette image pour créer un conteneur Docker en utilisant la commande `docker run hello-world` et vérifier le bon fonctionnement de votre installation Docker.
+
 ## 6. Créer un conteneur Docker pour utiliser l'image hello-world
 
 ```
@@ -126,10 +128,6 @@ CONTAINER ID   IMAGE              COMMAND                  CREATED           STA
 f1e3d9fe4c5a   hello-world        "/hello"                 2 minutes ago     Exited (0) 2 minutes ago                          vibrant_khayyam
 ```
 
-Dans cet exemple, il y a trois conteneurs répertoriés : "web", "db" et "vibrant_khayyam". Le conteneur "web" est en cours d'exécution, tandis que les conteneurs "db" et "vibrant_khayyam" sont arrêtés.
-
-La commande `docker ps -a` vous permet de voir tous les conteneurs présents sur votre système, qu'ils soient actifs ou arrêtés, ce qui peut être utile pour gérer et inspecter l'historique des conteneurs.
-
 ## 8. Supprimer le conteneur de l'image hello-world
 
 ```
@@ -137,7 +135,18 @@ $ docker rm <ID_conteneur>
 ```
 Après avoir exécuté la commande docker rm <ID_conteneur>, Docker supprimera le conteneur spécifié de votre système si celui-ci existe. Vous pouvez utiliser la commande docker ps -a pour vérifier que le conteneur a été supprimé avec succès.
 
-## 6. Supprimer l'image "hello-world" de votre machine.
+## 9. Vérifier la list des conteneurs 
+
+La commande `docker ps -a` vous permet de voir tous les conteneurs présents sur votre système, qu'ils soient actifs ou arrêtés, ce qui peut être utile pour gérer et inspecter l'historique des conteneurs.
+
+```
+$ docker ps -a
+```
+
+Le but de l'utilisation de cette commande est de vérifier que le conteneur de l'image est supprimé
+
+
+## 10. Supprimer l'image "hello-world" de votre machine.
 
 ```
 $ docker rmi hello-world
@@ -146,3 +155,12 @@ $ docker rmi hello-world
 La commande docker rmi hello-world est utilisée pour supprimer une image Docker de votre système. En utilisant cette commande avec l'argument hello-world, vous indiquez à Docker de supprimer l'image "hello-world" de votre système local.
 
 Après avoir exécuté la commande docker rmi hello-world, Docker supprimera l'image "hello-world" de votre système si elle est présente. Vous pouvez utiliser la commande docker images pour vérifier que l'image "hello-world" a été supprimée avec succès.
+
+## 11. Vérifiez à nouveau les images Docker disponibles.
+
+```
+$ docker images
+```
+
+Le but de l'utilisation de cette commande est de vérifier que l'image est supprimé
+
