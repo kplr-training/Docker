@@ -14,7 +14,7 @@ Cet exercice vous a permis de pratiquer les commandes de base de Docker, y compr
 La commande docker --version est utilisée pour afficher la version de Docker installée sur votre système. Lorsque vous exécutez cette commande, elle affiche la version de Docker suivie du numéro de version.
 
 ```
-$ docker --version 
+ docker --version 
 ```
 Voici un exemple de sortie possible :
 
