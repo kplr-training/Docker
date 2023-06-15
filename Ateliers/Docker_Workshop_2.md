@@ -121,7 +121,7 @@ Si vous voyez une entrée similaire dans le résultat de la commande `docker ps`
 La commande suivante permet d'exécuter une session interactive de terminal à l'intérieur du conteneur PostgreSQL en utilisant la commande `docker exec` :
 
 ```
-docker exec -it <ID_conteneur> bash
+$ docker exec -it <ID_conteneur> bash
 ```
 
 Explications :
