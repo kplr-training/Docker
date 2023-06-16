@@ -61,7 +61,7 @@ Dans cet exemple, vous pouvez voir une entrée pour l'image `postgres` avec la b
 
 Si vous voyez une entrée similaire dans le résultat de la commande `docker images`, cela signifie que l'image PostgreSQL a été téléchargée avec succès sur votre machine.
 
-## 3. Crée et exécuter le conteneur Docker de l'image PostgreSQL
+## 3. Créer et exécuter le conteneur Docker de l'image PostgreSQL
 
 La commande suivante permet de créer et d'exécuter un conteneur Docker basé sur l'image PostgreSQL :
 
