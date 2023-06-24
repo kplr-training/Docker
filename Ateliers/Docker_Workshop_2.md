@@ -4,6 +4,19 @@ Dans cet exercice, nous allons découvrir comment utiliser l'image Docker de Pos
 
 En suivant les étapes fournies, vous apprendrez comment télécharger l'image Docker de PostgreSQL, créer un conteneur, vérifier son fonctionnement et vous connecter à la base de données PostgreSQL. 
 
+******************************************************************************************************************************************************************
+### Créer un nouveau repository Github Vide
+
+Connectez-vous à votre compte GitHub et cliquez sur le bouton "New" pour créer un nouveau dépôt. Donnez un nom et une description au dépôt et choisissez les options appropriées, telles que la visibilité et le fichier README.md. Cliquez sur le bouton "Create repository" pour créer le nouveau dépôt.
+
+![image](https://user-images.githubusercontent.com/123757632/221904279-c5a2d920-5b45-4193-b599-1cc21daae210.png)
+
+### Ouvrir le dépot Github directement sur Gitpod
+
+Etapes pour création et utilisation de [Gitpod](https://github.com/kplr-training/Git-Github/blob/main/Ateliers/Gitpod%20101.md).
+
+******************************************************************************************************************************************************************
+
 ## 1. Télécharger l'image Docker de PostgreSQL a partir du [Docker-Hub](https://hub.docker.com/_/postgres)
 
 ```
