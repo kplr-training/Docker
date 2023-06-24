@@ -8,7 +8,7 @@ Pour dockeriser une application Flask, vous aurez besoin des éléments suivants
 
 * Dockerfile : Vous devez créer un fichier Dockerfile pour définir votre image de conteneur. Le Dockerfile contient les instructions pour créer l'image de conteneur, y compris les dépendances, les bibliothèques et les configurations.
 
-## 1 . Forker le dépot suivant : [Projet Image classification](https://hub.docker.com/_/postgres)
+## 1 . Forker le dépot suivant : [Projet Image classification](https://github.com/asmaa-kplr/Image_classification)
 
 Accédez à la page du dépôt : Une fois que vous avez trouvé le dépôt, cliquez sur son nom pour accéder à sa page principale.
 
