@@ -4,6 +4,19 @@ Dans cet atelier, nous allons découvrir Docker Compose, un outil puissant pour 
 
 Nous allons créer un fichier docker-compose.yml dans lequel nous définirons les services PostgreSQL et PgAdmin. Le service PostgreSQL sera responsable de l'exécution de notre base de données PostgreSQL, tandis que le service PgAdmin fournira une interface web conviviale pour administrer et gérer la base de données.
 
+******************************************************************************************************************************************************************
+### Créer un nouveau repository Github Vide
+
+Connectez-vous à votre compte GitHub et cliquez sur le bouton "New" pour créer un nouveau dépôt. Donnez un nom et une description au dépôt et choisissez les options appropriées, telles que la visibilité et le fichier README.md. Cliquez sur le bouton "Create repository" pour créer le nouveau dépôt.
+
+![image](https://user-images.githubusercontent.com/123757632/221904279-c5a2d920-5b45-4193-b599-1cc21daae210.png)
+
+### Ouvrir le dépot Github directement sur Gitpod
+
+Etapes pour création et utilisation de [Gitpod](https://github.com/kplr-training/Git-Github/blob/main/Ateliers/Gitpod%20101.md).
+
+******************************************************************************************************************************************************************
+
 ## 1. Création du fichier docker_compose.yaml
 
 ```
