@@ -105,7 +105,7 @@ Une fois que le conteneur est en cours d'exécution, vous pouvez utiliser des co
 ## 4. Afficher les conteneurs en cours 
 
 ```
-$ docker pull ps
+$ docker ps
 ```
 
 La commande `docker ps` permet d'afficher la liste des conteneurs en cours d'exécution sur votre machine. Utilisez-la pour afficher le conteneur PostgreSQL que vous avez créé. Voici un exemple de résultat :
@@ -211,7 +211,7 @@ En exécutant cette commande, vous quitterez le shell Bash du conteneur et revie
 ## 10. Afficher les conteneurs en cours 
 
 ```
-$ docker pull ps
+$ docker ps
 ```
 
 Après avoir quitté le shell Bash à l'intérieur du conteneur à l'aide de la commande `exit`, vous pouvez utiliser la commande `docker ps` pour afficher la liste des conteneurs en cours d'exécution sur votre machine. Voici un exemple de résultat :
